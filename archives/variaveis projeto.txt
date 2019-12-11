@@ -1,0 +1,208 @@
+rsocial
+cnpj
+endereco
+contato
+telefone
+email
+bilhetagem - array
+relatorios - array
+listagem
+regras_imp - array
+pool
+cotas
+alerta_cotas - array
+policy
+lib_cracha - array
+chargerback
+tracking - array
+releaser
+dispositivos_liberacao - array
+implementacao
+instalacao
+sites
+impressao
+sem_server_imp
+sis_op
+comunicacao_entre_sites
+user_autentic_estacoes
+imp_rede_usb
+licenca_sql_server
+instalar_sql_server_express
+server_dominio_autenticacao - array
+importacao_dominio
+qtde_users
+qtde_contas
+qtde_grupos
+qtde_estacoes_trabalho
+sis_op_est_trabalho - array
+navegadores_utilizados - array
+antivirus_utilizado
+erp_utilizado
+plataforma_erp
+impressao_erp
+bilhetagem_erp
+forma_desej_bilhetagem_erp - array
+em_cluster
+em_cetrix
+solaris
+ibm
+amb_impressao_extraordinario
+mod_e_qtde_de_impressoras
+mod_e_qtde_de_impressoras_usb
+server_imp_resp
+restricoes_do_fabricante
+descricao_restricao
+objetivo_projeto
+observacoes_adicionais
+
+
+
+
+CREATE TABLE IF NOT EXISTS clients_checklist (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    rsocial varchar(50) null,
+    cnpj varchar(20) null,
+    endereco varchar(150) null,
+    contato varchar(50) null,
+    telefone varchar(20) null,
+    email varchar(50) null,
+    bilhetagem varchar(255) null,
+    relatorios varchar(255) null,
+    outros_relatorios varchar(255) null,
+    listagem varchar(5) null,
+    regras_imp varchar(255) null,
+    pool varchar(5) null,
+    cotas varchar(30) null,
+    alerta_cotas varchar(255) null,
+    policy varchar(5) null,
+    lib_cracha varchar(255) null,
+    outros_lib_cracha varchar(255) null,
+    chargerback varchar(5) null,
+    tracking varchar(255) null,
+    releaser varchar(20) null,
+    dispositivos_liberacao varchar(255) null,
+    outros_dispositivos_liberacao varchar(255) null,
+    implementacao varchar(5) null,
+    instalacao varchar(20) null,
+    sites varchar(10) null,
+    impressao varchar(10) null,
+    sem_server_imp varchar(10) null,
+    sis_op varchar(10) null,
+    comunicacao_entre_sites varchar(5) null,
+    user_autentic_estacoes varchar(255) null,
+    imp_rede_usb varchar(5) null,
+    licenca_sql_server varchar(5) null,
+    instalar_sql_server_express varchar(5) null,
+    server_dominio_autenticacao varchar(255) null,
+    outros_server_dominio_autenticacao varchar(255) null,
+    importacao_dominio varchar(10) null,
+    outros_importacao_dominio varchar(255) null,
+    qtde_users varchar(5) null,
+    qtde_contas varchar(5) null,
+    qtde_grupos varchar(5) null,
+    qtde_estacoes_trabalho varchar(5) null,
+    sis_op_est_trabalho varchar(255) null,
+    outros_sis_op_est_trabalho varchar(255) null,
+    navegadores_utilizados varchar(255) null,
+    outros_navegadores_utilizados varchar(255) null,
+    dr varchar(255) null,
+    antivirus_utilizado varchar(255) null,
+    erp_utilizado varchar(255) null,
+    plataforma_erp varchar(255) null,
+    impressao_erp TEXT,
+    bilhetagem_erp varchar(5) null,
+    forma_desej_bilhetagem_erp varchar(10) null,
+    em_cluster varchar(5) null,
+    em_cetrix varchar(5) null,
+    solaris varchar(5) null,
+    ibm varchar(5) null,
+    amb_impressao_extraordinario TEXT,
+    mod_e_qtde_de_impressoras TEXT,
+    mod_e_qtde_de_impressoras_usb TEXT,
+    server_imp_resp VARCHAR(5) NULL,
+    restricoes_do_fabricante VARCHAR(5) NULL,
+    descricao_restricao TEXT,
+    objetivo_projeto TEXT,
+    observacoes_adicionais TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)  ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS status_checklist (
+    id INT AUTO_INCREMENT PRIMARY KEY,   
+    clients_checklist_id INT NOT NULL,
+    status VARCHAR(100) NOT NULL,
+    obs TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)  ENGINE=INNODB;
+
+ALTER TABLE status_checklist ADD FOREIGN KEY (clients_checklist_id) REFERENCES clients_checklist(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE IF NOT EXISTS authentication (
+    id INT AUTO_INCREMENT PRIMARY KEY,   
+    nome VARCHAR(100) NOT NULL,
+    login VARCHAR(100) NOT NULL,
+    senha VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)  ENGINE=INNODB;
+
+INSERT INTO authentication (nome, login, senha) VALUES ('admin', 'admin', 'Mudar@@12');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

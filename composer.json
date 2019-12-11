@@ -1,0 +1,19 @@
+{
+	"name": "SITE",
+	"author": [{
+		"name": "Esveraldo Martins",
+		"email": "esveraldo@hotmail.com"
+	}],
+	"require": {
+		"php": ">=5.4",
+		"ext-gd": "*"
+	},
+	"require-dev": {
+
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "src/App/"
+		}
+	}
+}
